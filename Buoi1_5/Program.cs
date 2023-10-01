@@ -4,44 +4,42 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Buoi1_5
+namespace Buoi1_05
 {
     internal class Program
     {
         static void Main(string[] args)
-        { 
-          Console.Write("Nhap so luong sinh vien: ");
-            int n = int.Parse(Console.ReadLine());
+        {
+            Console.Write("Nhap so luong sinh vien: ");
+            int n = Convert.ToInt16(Console.ReadLine());
 
-        string[] danhSachSinhVien = NhapSV(n);
+            string[] dssinhvien = new string[n];
 
-        Console.WriteLine("\nDanh sach sinh vien:");
-            XuatSV(danhSachSinhVien, n);
-
+            NhapSV(dssinhvien, n);
+            XuatSV(dssinhvien, n);
             Console.ReadKey();
         }
-     
-    static string[] NhapSV(int n)
-    {
-        string[] danhSachSinhVien = new string[n];
 
-        for (int i = 0; i < n; i++)
+        static void NhapSV(string[] dssinhvien, int n)
         {
-            Console.Write("Nhap ho ten sinh vien {0}: ", i + 1);
-            danhSachSinhVien[i] = Console.ReadLine();
+            for (int i = 0; i < n; i++)
+            {
+                Console.Write($"Nhap ten sv thu {i + 1}: ");
+                dssinhvien[i] = Console.ReadLine();
+            }
         }
 
-        return danhSachSinhVien;
-    }
-
-    static void XuatSV(string[] danhSachSinhVien, int n)
-    {
-        for (int i = 0; i < n; i++)
+        static void XuatSV(string[] dssinhvien, int n)
         {
-            Console.WriteLine("Sinh vien {0}: {1}", i + 1, danhSachSinhVien[i]);
+            Console.WriteLine("Danh sach sinh vien:");
+            for (int i = 0; i < n; i++)
+            {
+                Console.WriteLine($"Sinh vien thu {i + 1}: {dssinhvien[i]}");
+            }
         }
 
-    }
 
-}
+
+
+    }
 }
