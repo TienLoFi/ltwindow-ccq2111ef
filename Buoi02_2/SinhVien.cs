@@ -15,7 +15,7 @@ namespace Buoi02_2
         public string Khoa { get; set; }
 
         public SinhVien() { }
-        public SinhVien(string masv, string hoten, double diemtb, string khoa,string cnmd,string )
+        public SinhVien(string masv, string hoten, double diemtb, string khoa, string cnmd, string )
         {
             MaSV = masv;
             HoTen = hoten;

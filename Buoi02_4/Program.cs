@@ -8,7 +8,7 @@ namespace Buoi02_4
 {
     internal class Program
     {
-  
+
 
 
         static void Main(string[] args)
@@ -39,4 +39,5 @@ namespace Buoi02_4
             Console.ReadKey();
         }
     }
+}
 
