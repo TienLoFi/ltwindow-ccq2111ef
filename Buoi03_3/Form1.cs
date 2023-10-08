@@ -44,7 +44,14 @@ namespace Buoi3_3
 
         private void button6_Click(object sender, EventArgs e)
         {
-
+            foreach (ListViewItem item in lvLop.Items)
+            {
+               
+                
+                    lvLop.Items.Remove(item);
+                    lbSinhVien.Items.Add(item.Text);
+                }
+            
         }
 
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
@@ -56,11 +63,11 @@ namespace Buoi3_3
         {
             foreach (ListViewItem item in lvLop.Items)
             {
-              
-                
-                    lvLop.Items.Remove(item);
-                    lbSinhVien.Items.Add(item.Text);
-                
+
+
+                lvLop.Items.Remove(item);
+                lbSinhVien.Items.Add(item.Text);
+
             }
         }
 
@@ -80,7 +87,7 @@ namespace Buoi3_3
 
                 // Lấy thông tin
                 string hoten = txtHoTen.Text;
-            lbSinhVien.Items.Add(hoten);    
+                lbSinhVien.Items.Add(hoten);
 
             }
             catch (Exception ex)
@@ -131,12 +138,12 @@ namespace Buoi3_3
         int Chon;
         private void button3_Click(object sender, EventArgs e)
         {
-            if( Chon != -1)
+            if (Chon != -1)
             {
-                string hoten =lbSinhVien.SelectedItem.ToString();
-                string khoa =lbSinhVien.SelectedItem.ToString();
+                string hoten = lbSinhVien.SelectedItem.ToString();
+                string khoa = lbSinhVien.SelectedItem.ToString();
                 ListViewItem item = new ListViewItem(hoten);
-                item.SubItems.Add(new ListViewItem.ListViewSubItem() { Text=khoa});
+                item.SubItems.Add(new ListViewItem.ListViewSubItem() { Text = khoa });
                 lvLop.Items.Add(item);
                 lbSinhVien.Items.RemoveAt(lbSinhVien.SelectedIndex);
                 Chon = -1;
@@ -146,12 +153,12 @@ namespace Buoi3_3
         private void button4_Click(object sender, EventArgs e)
         {
             int count = lbSinhVien.Items.Count;
-            for ( int vt=0;vt<count; vt++)
+            for (int vt = 0; vt < count; vt++)
             {
-                string khoa =cbKhoa.SelectedItem.ToString();
+                string khoa = cbKhoa.SelectedItem.ToString();
                 string hoten = lbSinhVien.Items[vt].ToString();
                 ListViewItem item = new ListViewItem(hoten);
-                item.SubItems.Add(new ListViewItem.ListViewSubItem(){ Text=khoa});
+                item.SubItems.Add(new ListViewItem.ListViewSubItem() { Text = khoa });
                 lvLop.Items.Add(item);
             }
             lbSinhVien.Items.Clear();
@@ -159,12 +166,12 @@ namespace Buoi3_3
 
         private void button5_Click(object sender, EventArgs e)
         {
-            foreach(ListViewItem item in lvLop.Items)
+            foreach (ListViewItem item in lvLop.Items)
             {
                 if (item.Selected)
                 {
                     lvLop.Items.Remove(item);
-                    lbSinhVien.Items . Add(item.Text);
+                    lbSinhVien.Items.Add(item.Text);
                 }
             }
         }
@@ -182,6 +189,11 @@ namespace Buoi3_3
         private void lbSinhVien_MouseClick(object sender, MouseEventArgs e)
         {
             Chon = 1;
+        }
+
+        private void lvLop_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

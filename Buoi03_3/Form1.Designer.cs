@@ -230,6 +230,7 @@
             this.lvLop.TabIndex = 1;
             this.lvLop.UseCompatibleStateImageBehavior = false;
             this.lvLop.View = System.Windows.Forms.View.Details;
+            this.lvLop.SelectedIndexChanged += new System.EventHandler(this.lvLop_SelectedIndexChanged);
             // 
             // columnHeader1
             // 

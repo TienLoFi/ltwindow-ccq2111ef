@@ -44,12 +44,12 @@ namespace Bai03_1
             try
             {
                 double a, b;
-                if (!double.TryParse(txtSoA.Text,out a))
+                if (!double.TryParse(txtSoA.Text, out a))
                 {
                     throw new Exception("Số A không được để trống hoặc phải số ");
                 }
-                if(!double.TryParse(txtSoB.Text,out b))
-                    {
+                if (!double.TryParse(txtSoB.Text, out b))
+                {
                     throw new Exception("Số B không được để trống hoặc phải là số");
                 }
                 txtKetQua.Text = (a + b).ToString();
